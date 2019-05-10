@@ -14,3 +14,17 @@ and
 
 
 
+##Steps
+
+A: Genome simulation
+	A1: Downloading reference genome
+	A2: simulating haplotypes 
+
+B:
+	B1: Sequencing reads
+	B2:mapping reads to the reference genome
+	B3: Calling the variants (SNPs)
+
+C: Haplotyping
+
+D: Comparing

@@ -54,7 +54,7 @@ cat reads_hap1_R2.fq reads_hap2_R2.fq > R2.fastq
 head -n 10 R1.fastq
 cd ..
 
-############# B1:mapping reads to the reference genome #############
+############# B2:mapping reads to the reference genome #############
 cd reference
 bowtie2-build  ref.fasta solanum
 cd ../reads
@@ -70,7 +70,7 @@ samtools index sorted.bam
 # use IGV to look at it
 
 
-############# B2: Calling the variants (SNPs) #############
+############# B3: Calling the variants (SNPs) #############
 
 freebayes -f ../reference/ref.fasta -p 2 sorted.bam > variants.vcf
 
