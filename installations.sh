@@ -39,12 +39,8 @@ source ~/.profile # in each working session
 #for temporarily exit press  crl+a crl+d
 # for come back type screen -r
 
-screen
-# press enter
-cd software
-git clone --recursive git://github.com/ekg/freebayes.git
-cd
-make
+conda install -c bioconda freebayes
+
 
 cat ~/.profile
 vi ~/.profile
