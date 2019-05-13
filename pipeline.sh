@@ -16,10 +16,11 @@ mkdir reference
 cd reference
 #downloading genome (chr1) from ftp://ftp.ensemblgenomes.org/pub/plants/release-42/fasta/solanum_tuberosum/dna/
 
-#wget ftp://ftp.ensemblgenomes.org/pub/plants/release-42/fasta/solanum_tuberosum/dna/Solanum_tuberosum.SolTub_3.0.dna.chromosome.1.fa.gz
+wget ftp://ftp.ensemblgenomes.org/pub/plants/release-42/fasta/solanum_tuberosum/dna/Solanum_tuberosum.SolTub_3.0.dna.chromosome.1.fa.gz
 
-#gunzip -k Solanum_tuberosum.SolTub_3.0.dna.chromosome.1.fa.gz 
- cp /mnt/LTR_userdata/majid001/msc/working/reference/Solanum_tuberosum.SolTub_3.0.dna.chromosome.1.fa .
+gunzip -k Solanum_tuberosum.SolTub_3.0.dna.chromosome.1.fa.gz 
+
+
 head -n  1 Solanum_tuberosum.SolTub_3.0.dna.chromosome.1.fa > ref.fasta 
 sed -n  100000,100500p Solanum_tuberosum.SolTub_3.0.dna.chromosome.1.fa >> ref.fasta 
 
