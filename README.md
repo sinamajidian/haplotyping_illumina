@@ -39,8 +39,6 @@ D: Comparing
 Please read  my previous work 
 
 ```
-Sina Majidian, Mohammad Hossein Kahaei
-"NGS based haplotype assembly using matrix completion"
-    https://doi.org/10.1371/journal.pone.0214455
+Sina Majidian, Mohammad Hossein Kahaei, "NGS based haplotype assembly using matrix completion", https://doi.org/10.1371/journal.pone.0214455
 
 ```
