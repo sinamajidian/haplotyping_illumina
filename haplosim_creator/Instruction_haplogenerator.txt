@@ -1,0 +1,23 @@
+
+#Hi
+#Please log in to eddy!
+###copy file from GitHub##
+ 
+cd /mnt/nexenta/engel118/
+git clone https://github.com/EhsanMotazedi/Haplosim.git
+mkdir haplosimc
+cd haplosimc
+cp ../Haplosim/haplogenerator.py .
+cp ../Haplosim/mugen.py .
+python haplogenerator.py -h
+
+# please check that whether help is shown or not.
+### copy a part of data##
+
+mkdir ref_genome
+head -n 20 /mnt/nexenta/engel118/AraTh_chr1/Arabidopsis_thaliana.TAIR10.dna.toplevel_chr1.fa > ref_genome/arabi.fa
+samtools faidx ref_genome/arabi.fa 
+mkdir out
+python haplogenerator.py  -f ref_genome/arabi.fa  -o out/arabi -p 4 -v --model poisson -s [.02,0,0]
+
+head -n 3 out/arabi_varianthaplos.txt

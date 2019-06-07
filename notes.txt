@@ -1,0 +1,70 @@
+
+Haptree v1 is only for diploid. To make it a standard approach, it's better to use version V0.1 for both diploid and polyploid.
+
+
+You can use
+
+https://github.com/EhsanMotazedi/Haplosim/blob/master/FragmentPoly.py
+
+for converting a fragment file to a dictionary format.
+
+
+You can see the examples of the input format in the Examples files in their website:
+
+http://cb.csail.mit.edu/cb/haptree/  
+
+Make sure that your are downloading the correct version.
+
+
+I suggest you to work on diploid to make sure that the whole pipeline is working properly.
+
+
+
+
+
+
+For running FragmentPoly.py,  you may use
+
+python2 FragmentPoly.py-f frag_in.txt -o frag_dic.txt -x HapTree
+
+in order to convert the output of extracthairs to haptree's input and
+
+python2 FragmentPoly.py-f frag_in.txt -o frag_dic.txt -x SDhaP
+
+in order to convert the output of extracthairs to sdhap's input.
+
+
+I'm not sure that it's working on python3. 
+
+
+For installing packages for different python versions, I use the following. 
+python2 -m pip install package_name  --user
+python3 -m pip install package_name  --user 
+
+
+
+
+I just remember another issue.
+
+
+For  polypoids illumina data, you should put an edited VCF-file as the input of extracthairs.
+
+You should change the polyploid genotype of vcf file to a diploid one. That's the trick!
+
+So, both genotypes 0/0/1 and  0/1/1 should be converted to 0/1.
+
+sed  raw.vcf "s/0\/0\/1/0\/1/;s/0\/1\/1/0\/1/" > edited.vcf
+
+If you do not edit the vcf file, extracthairs consider the genotype 0/0/1 as homozygous which is not
+
+heterogeneous.
+
+
+Note that only heterogeneous variant exitst in the extracthairs' output.
+
+
+For 10x data we are using another Ehsan's code for creating fragment files which uses the barcodes.
+
+https://github.com/smajidian/10xpipline/tree/master/bamprocess_10x
+
+

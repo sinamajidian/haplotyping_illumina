@@ -1,0 +1,22 @@
+
+
+
+#login to waterman
+
+cd /mnt/nexenta/engel118/
+mkdir haplosim_creatorV1
+cd haplosim_creatorV1
+cp /mnt/nexenta/majid001/haplosim_creator/haplosim_creatorV1.py .
+cp ../haplogenerator.py  .
+cp ../mugen.py .
+
+mkdir ref
+head -n 100 /mnt/nexenta/engel118/AraTh_chr1/Arabidopsis_thaliana.TAIR10.dna.toplevel_chr1.fa > ref/arabi100.fa
+
+samtools faidx ref/arabi100.fa
+
+
+python haplosim_creatorV1.py ref/arabi100.fa ara PE MS --insert-size 500 -p 4 -v --bwa-mem -x 20 -l 5e03 --report-aln
+
+
+"cp "+_homolo+" "+_homolo+".hap ; "+
