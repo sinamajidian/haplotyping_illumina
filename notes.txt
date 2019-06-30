@@ -68,3 +68,22 @@ For 10x data we are using another Ehsan's code for creating fragment files which
 https://github.com/smajidian/10xpipline/tree/master/bamprocess_10x
 
 
+
+
+
+When Freebayes faces with two or more close snps, it converts them to a complex event or mnp.
+
+
+Have you tried break_vcf from this link ?
+
+./break_vcf.sh var.vcf var_edited.vcf
+
+
+I couldn't find a reference on this issue, but there is a description in freebayes github.
+
+    FreeBayes is a Bayesian genetic variant detector designed to find small polymorphisms, specifically SNPs (single-nucleotide polymorphisms), indels (insertions and deletions), MNPs (multi-nucleotide polymorphisms), and complex events (composite insertion and substitution events) smaller than the length of a short-read sequencing alignment.
+
+As far as I understands, If we compare TCAT to TCCG, there are two changes in the thrid and fourth position so, it is a multi-nucleotide polymorphisms.
+
+
+Let me know, if break_vcf.sh does not solve the issue.
